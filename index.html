@@ -6,32 +6,7 @@
 <title>SAETECH — Automation Solutions & China–Vietnam Machinery Trading</title>
 <link rel="icon" type="image/png" href="assets/logo.png">
 <meta name="description" content="SAETECH: automation solutions, automated production line installation, and machinery trade between China and Vietnam.">
-  <script src="https://cdn.tailwindcss.com">
-// subtle mouse parallax for desktop
-if (window.matchMedia('(pointer:fine)').matches && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-  const monitor = document.getElementById('monitorEl');
-  if (monitor) {
-    monitor.addEventListener('mousemove', (e) => {
-      const r = monitor.getBoundingClientRect();
-      const x = ((e.clientX - r.left) / r.width - 0.5) * 4;
-      const y = ((e.clientY - r.top) / r.height - 0.5) * -4;
-      monitor.style.transform = `perspective(900px) rotateY(${x}deg) rotateX(${y}deg) translateY(-4px)`;
-    });
-    monitor.addEventListener('mouseleave', () => {
-      monitor.style.transform = '';
-    });
-  }
-}
-
-// If a video cannot be played by the browser, keep the poster visible.
-document.querySelectorAll('video').forEach(video => {
-  video.addEventListener('error', () => {
-    video.pause();
-    video.removeAttribute('autoplay');
-  });
-});
-
-</script>
+<script src="https://cdn.tailwindcss.com"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@500&display=swap" rel="stylesheet">
 <style>
@@ -400,6 +375,12 @@ document.querySelectorAll('video').forEach(video => {
   .why-list p{margin:0;font-size:14px;color:var(--steel);}
   @media (max-width:900px){.why-grid{grid-template-columns:1fr;}}
 
+  /* ---------- team ---------- */
+  .team-caption{
+    margin-top:10px;font-size:12.5px;color:var(--steel);
+    font-family:'Roboto Mono',monospace;line-height:1.5;
+  }
+
   /* ---------- contact ---------- */
   .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;}
   .contact-card{
@@ -440,7 +421,7 @@ document.querySelectorAll('video').forEach(video => {
     .why-grid, .contact-grid{grid-template-columns:1fr;}
   }
 
-  /* ---------- enhanced Tailwind-style motion & glass effects ---------- */
+  /* ---------- enhanced motion & glass effects ---------- */
   .monitor, .service-card, .contact-card, .showcase-video, .counter{
     transition:transform .35s ease, box-shadow .35s ease, border-color .35s ease, filter .35s ease;
   }
@@ -547,11 +528,13 @@ document.querySelectorAll('video').forEach(video => {
       <a href="#process" data-i18n="nav.process">Process</a>
       <a href="#showcase" data-i18n="nav.showcase">In Action</a>
       <a href="#why" data-i18n="nav.why">Why Us</a>
+      <a href="#team" data-i18n="nav.team">Team</a>
       <a href="#contact" class="cta-link" data-i18n="nav.contact">Contact</a>
       <div class="langswitch" id="langswitch">
         <button data-lang="vi" class="active">VI</button>
         <button data-lang="en">EN</button>
         <button data-lang="zh">中文</button>
+        <button data-lang="de">DE</button>
       </div>
     </nav>
     <button class="burger" id="burger" aria-label="Menu">☰</button>
@@ -805,7 +788,7 @@ document.querySelectorAll('video').forEach(video => {
       </li>
       <li>
         <div class="mark">✓</div>
-        <div><b data-i18n="why.i2.b">Bilingual engineering team</b><p data-i18n="why.i2.d">Our staff work fluently across Vietnamese and Chinese, so specifications never get lost in translation.</p></div>
+        <div><b data-i18n="why.i2.b">Experienced engineering team</b><p data-i18n="why.i2.d">Our staff have years of experience working for major automated machinery corporations, enabling us to handle almost any type of machine.</p></div>
       </li>
       <li>
         <div class="mark">✓</div>
@@ -816,6 +799,41 @@ document.querySelectorAll('video').forEach(video => {
         <div><b data-i18n="why.i4.b">Ongoing support</b><p data-i18n="why.i4.d">Spare parts, remote diagnostics, and maintenance visits keep your line running long after handover.</p></div>
       </li>
     </ul>
+  </div>
+</section>
+
+<section class="panel" id="team">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="tag" data-i18n="team.tag">Con người & Đối tác</div>
+      <h2 data-i18n="team.title">Người sáng lập & Đối tác chiến lược</h2>
+      <p style="color:var(--steel);margin-top:14px;font-size:15px;" data-i18n="team.lead">Sức mạnh của SAETECH đến từ sự dẫn dắt của người sáng lập và các mối quan hệ đối tác chiến lược với những tên tuổi lớn trong ngành.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mt-12 items-start">
+      <!-- Người sáng lập -->
+      <div class="reveal">
+        <img src="assets/ceo.jpg" alt="Ông Phạm Thanh Phong - Người sáng lập SAETECH" class="w-full h-auto rounded-md shadow-xl border border-[var(--line)] object-cover aspect-[4/3]">
+        <h3 class="mt-5 text-xl font-bold text-white" data-i18n="team.founder.name">Người Sáng Lập</h3>
+        <p class="text-[var(--steel)] mt-2" data-i18n="team.founder.desc">ông Phạm Thanh Phong</p>
+      </div>
+
+      <!-- Hình ảnh hợp tác / sự kiện -->
+      <div class="grid grid-cols-2 gap-4 reveal">
+        <div>
+          <img src="assets/saetech-propak.jpg" class="w-full h-auto rounded-md shadow-md border border-[var(--line)] object-cover aspect-square" alt="SAETECH tại triển lãm Propak Asia">
+          <p class="team-caption" data-i18n="team.img.propak">SAETECH tại Propak Asia 2026</p>
+        </div>
+        <div>
+          <img src="assets/saetech-feyvan.jpg" class="w-full h-auto rounded-md shadow-md border border-[var(--line)] object-cover aspect-square" alt="Lễ ký kết hợp tác SAETECH và Feyvan Packing Machinery">
+          <p class="team-caption" data-i18n="team.img.feyvan">Hợp tác cùng Feyvan Packing Machinery Co., Ltd</p>
+        </div>
+        <div>
+          <img src="assets/saetech-xispek.png" class="w-full h-auto rounded-md shadow-md border border-[var(--line)] object-cover aspect-square" alt="Lễ ký kết hợp tác SAETECH và Xispek Inspection Technology">
+          <p class="team-caption" data-i18n="team.img.xispek">Hợp tác cùng Xispek Inspection Technology Co., Ltd</p>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -839,7 +857,7 @@ document.querySelectorAll('video').forEach(video => {
   </svg>
 </div>
 
-<section class="panel" id="contact">
+<section class="panel alt" id="contact">
   <div class="wrap contact-grid">
     <div class="reveal">
       <div class="tag" data-i18n="contact.tag">Get in touch</div>
@@ -898,17 +916,20 @@ document.querySelectorAll('video').forEach(video => {
     <div class="foot-links">
       <a href="#services" data-i18n="nav.services">Services</a>
       <a href="#process" data-i18n="nav.process">Process</a>
+      <a href="#team" data-i18n="nav.team">Team</a>
       <a href="#contact" data-i18n="nav.contact">Contact</a>
     </div>
-    <div class="fine mono" data-i18n="footer.rights">© 2026 SAETECH. Automation solutions & China–Vietnam machinery trade.</div>
-    <p class="text-sm text-gray-500" style="margin-top:8px;">© 2026 SAETECH. All rights reserved. | <span class="text-red-500 font-semibold">Developed by Quoc Huy</span></p>
+    <div>
+      <div class="fine mono" data-i18n="footer.rights">© 2026 SAETECH. Automation solutions & China–Vietnam machinery trade.</div>
+      <p class="text-sm" style="margin-top:8px;color:var(--steel);">© 2026 SAETECH. All rights reserved. | <span style="color:var(--red-glow);font-weight:600;">Developed by Quoc Huy</span></p>
+    </div>
   </div>
 </footer>
 
 <script>
 const translations = {
   vi: {
-    "nav.services":"Dịch vụ","nav.process":"Quy trình","nav.showcase":"Thực tế","nav.why":"Vì sao chọn chúng tôi","nav.contact":"Liên hệ",
+    "nav.services":"Dịch vụ","nav.process":"Quy trình","nav.showcase":"Thực tế","nav.why":"Vì sao chọn chúng tôi","nav.team":"Đội ngũ","nav.contact":"Liên hệ",
     "hero.eyebrow":"Tự động hóa · Lắp đặt · Giao thương Trung–Việt",
     "hero.title":"Dây chuyền sản xuất tự động, <em>được xây dựng và kết nối</em> giữa Việt Nam và Trung Quốc",
     "hero.lead":"SAETECH thiết kế giải pháp tự động hóa, lắp đặt và vận hành thử dây chuyền sản xuất, đồng thời cung ứng máy móc công nghiệp trực tiếp từ các nhà sản xuất Trung Quốc uy tín cho nhà máy Việt Nam.",
@@ -936,9 +957,20 @@ const translations = {
     "why.lead":"Hầu hết các đơn vị môi giới dừng lại ở hóa đơn. SAETECH đồng hành cùng bạn qua cả quá trình lắp đặt, vận hành thử và nhiều năm vận hành sau đó.",
     "why.c1":"Dây chuyền đã bàn giao","why.c2":"Năm kinh nghiệm tự động hóa công nghiệp","why.c3":"% thời gian hoạt động trung bình","why.c4":"Nhà máy đối tác tại Trung Quốc",
     "why.i1.b":"Nguồn hàng trực tiếp từ nhà máy","why.i1.d":"Không qua nhiều lớp trung gian — chúng tôi làm việc trực tiếp với nhà sản xuất, giữ giá cả và thời gian giao hàng minh bạch.",
-    "why.i2.b":"Đội ngũ kỹ thuật song ngữ","why.i2.d":"Nhân sự của chúng tôi thông thạo cả tiếng Việt và tiếng Trung, nên thông số kỹ thuật không bị sai lệch khi trao đổi.",
+    "why.i2.b":"Đội ngũ kỹ thuật có nhiều năm kinh nghiệm",
+    "why.i2.d":"Nhân sự chúng tôi có nhiều năm làm việc cho các tập đoàn lớn về máy móc tự động nên có thể xử lí hầu hết các loại máy",
     "why.i3.b":"Vận hành thử tại chỗ","why.i3.d":"Chúng tôi tự lắp đặt và hiệu chỉnh từng dây chuyền trước khi bàn giao cho vận hành viên của bạn.",
     "why.i4.b":"Hỗ trợ lâu dài","why.i4.d":"Phụ tùng thay thế, chẩn đoán từ xa và bảo trì định kỳ giúp dây chuyền của bạn vận hành bền lâu sau bàn giao.",
+
+    "team.tag":"Con người & Đối tác",
+    "team.title":"Người sáng lập & Đối tác chiến lược",
+    "team.lead":"Sức mạnh của SAETECH đến từ sự dẫn dắt của người sáng lập và các mối quan hệ đối tác chiến lược với những tên tuổi lớn trong ngành.",
+    "team.founder.name":"Người Sáng Lập",
+    "team.founder.desc":"ông Phạm Thanh Phong",
+    "team.img.propak":"SAETECH tại Propak Asia 2026",
+    "team.img.feyvan":"Hợp tác cùng Feyvan Packing Machinery Co., Ltd",
+    "team.img.xispek":"Hợp tác cùng Xispek Inspection Technology Co., Ltd",
+
     "contact.tag":"Liên hệ","contact.title":"Cho chúng tôi biết dây chuyền của bạn cần làm gì",
     "contact.lead":"Chia sẻ sản phẩm, sản lượng mong muốn, hoặc một loại máy bạn đang cần tìm nguồn — chúng tôi sẽ phản hồi với các bước tiếp theo.",
     "contact.phoneLabel":"Điện thoại / Zalo","contact.fbLabel":"Facebook","contact.baseLabel":"Trụ sở","contact.baseValue":"Việt Nam — phục vụ nhà máy trên toàn quốc","contact.address":"59 Ấp Chiến Lược, Bình Hưng Hòa, TP. Hồ Chí Minh, Việt Nam",
@@ -947,7 +979,7 @@ const translations = {
     "footer.rights":"© 2026 SAETECH. Giải pháp tự động hóa & giao thương máy móc Trung–Việt."
   },
   en: {
-    "nav.services":"Services","nav.process":"Process","nav.showcase":"In Action","nav.why":"Why Us","nav.contact":"Contact",
+    "nav.services":"Services","nav.process":"Process","nav.showcase":"In Action","nav.why":"Why Us","nav.team":"Team","nav.contact":"Contact",
     "hero.eyebrow":"Automation · Installation · China–Vietnam Trade",
     "hero.title":"Automated production lines, <em>built and connected</em> across Vietnam and China",
     "hero.lead":"SAETECH designs automation solutions, installs and commissions production lines, and sources industrial machinery directly from trusted Chinese manufacturers for Vietnamese factories.",
@@ -975,9 +1007,19 @@ const translations = {
     "why.lead":"Most brokers stop at the invoice. SAETECH stays for the installation, the commissioning, and the years of running the line afterward.",
     "why.c1":"Lines delivered","why.c2":"Years in industrial automation","why.c3":"% average line uptime","why.c4":"Partner factories in China",
     "why.i1.b":"Direct factory sourcing","why.i1.d":"No layered middlemen — we work with manufacturers directly, which keeps pricing and lead times honest.",
-    "why.i2.b":"Bilingual engineering team","why.i2.d":"Our staff work fluently across Vietnamese and Chinese, so specifications never get lost in translation.",
+    "why.i2.b":"Experienced engineering team","why.i2.d":"Our staff have years of experience working for major automated machinery corporations, enabling us to handle almost any type of machine.",
     "why.i3.b":"On-site commissioning","why.i3.d":"We install and tune every line ourselves before handing the keys to your operators.",
     "why.i4.b":"Ongoing support","why.i4.d":"Spare parts, remote diagnostics, and maintenance visits keep your line running long after handover.",
+
+    "team.tag":"People & Partnerships",
+    "team.title":"Founder & Strategic Partners",
+    "team.lead":"SAETECH's strength comes from the leadership of our founder and strategic partnerships with major names in the industry.",
+    "team.founder.name":"Founder",
+    "team.founder.desc":"Mr. Pham Thanh Phong",
+    "team.img.propak":"SAETECH at Propak Asia 2026",
+    "team.img.feyvan":"Partnership signing with Feyvan Packing Machinery Co., Ltd",
+    "team.img.xispek":"Partnership signing with Xispek Inspection Technology Co., Ltd",
+
     "contact.tag":"Get in touch","contact.title":"Tell us what your line needs to do",
     "contact.lead":"Share your product, your target output, or a machine you're trying to source — we'll follow up with next steps.",
     "contact.phoneLabel":"Phone / Zalo","contact.fbLabel":"Facebook","contact.baseLabel":"Based in","contact.baseValue":"Vietnam — serving factories nationwide","contact.address":"59 Ấp Chiến Lược, Bình Hưng Hòa, Ho Chi Minh City, Vietnam",
@@ -985,8 +1027,102 @@ const translations = {
     "contact.form.submit":"Send message","contact.form.sent":"Message ready — connect this form to your email or CRM to receive it.",
     "footer.rights":"© 2026 SAETECH. Automation solutions & China–Vietnam machinery trade."
   },
+  de: {
+    "nav.services":"Dienstleistungen",
+    "nav.process":"Ablauf",
+    "nav.showcase":"In Aktion",
+    "nav.why":"Warum wir",
+    "nav.team":"Team",
+    "nav.contact":"Kontakt",
+    "hero.eyebrow":"Automatisierung · Installation · Handel China–Vietnam",
+    "hero.title":"Automatisierte Produktionslinien, <em>gebaut und vernetzt</em> zwischen Vietnam und China",
+    "hero.lead":"SAETECH entwickelt Automatisierungslösungen, installiert und nimmt Produktionslinien in Betrieb und beschafft Industriemaschinen direkt bei vertrauenswürdigen chinesischen Herstellern für vietnamesische Fabriken.",
+    "hero.cta1":"Beratung anfordern",
+    "hero.cta2":"Produktionslinie in Aktion ansehen",
+    "hero.stat1":"Installierte Linien",
+    "hero.stat2":"Durchschnittliche Zykluszeit",
+    "hero.stat3":"Beschaffungskorridor",
+    "hero.live":"LIVE-FEED · LINIE 03",
+    "hero.tele1":"Durchsatz",
+    "hero.tele2":"Betriebszeit",
+    "hero.tele3":"Status",
+    "ticker.1":"ABFÜLL- & VERSCHLIESSANLAGEN",
+    "ticker.2":"ROBOTER FÜR PICK & PLACE",
+    "ticker.3":"FÖRDER- & VERPACKUNGSLINIEN",
+    "ticker.4":"BESCHAFFUNG & INSPEKTION IN CHINA",
+    "ticker.5":"INSTALLATION & INBETRIEBNAHME",
+    "ticker.6":"ERSATZTEILE & WARTUNG",
+    "services.tag":"Was wir tun",
+    "services.title":"Drei Wege, Ihre Produktionslinie am Laufen zu halten",
+    "services.lead":"Vom ersten Konzept bis zum täglichen Betrieb bleibt SAETECH nah an der Maschine – nicht nur an der Bürokratie.",
+    "services.s1.title":"Automatisierungslösungen",
+    "services.s1.desc":"Wir entwickeln Automatisierungssysteme für Abfüllung, Verschließen, Montage und Verpackung – passend zu Ihrem Produkt und Ihrer Produktionshalle.",
+    "services.s2.title":"Linieninstallation & Inbetriebnahme",
+    "services.s2.desc":"Unsere Ingenieure installieren, kalibrieren und übergeben schlüsselfertige Produktionslinien vor Ort – inklusive Schulung Ihrer Bediener und Wartungskräfte.",
+    "services.s3.title":"Maschinenhandel China–Vietnam",
+    "services.s3.desc":"Wir verbinden chinesische Hersteller mit vietnamesischen Fabriken – von Beschaffung und Qualitätsprüfung über Logistik bis zum Kundendienst.",
+    "process.tag":"So entsteht eine Produktionslinie",
+    "process.title":"Von der Fabrik in China zur laufenden Linie in Vietnam",
+    "process.lead":"Jedes Projekt durchläuft dieselben vier Stationen, wobei SAETECH-Ingenieure an jeder Station präsent sind.",
+    "process.p1.title":"Beschaffen & spezifizieren",
+    "process.p1.desc":"Wir bringen Ihre Produktionsanforderungen mit geprüften Herstellern in China zusammen.",
+    "process.p2.title":"Prüfen & testen",
+    "process.p2.desc":"Werksabnahmeprüfung, bevor eine Maschine versendet wird.",
+    "process.p3.title":"Versenden & verzollen",
+    "process.p3.desc":"Wir übernehmen Logistik und Zollabwicklung nach Vietnam aus einer Hand.",
+    "process.p4.title":"Installieren & betreiben",
+    "process.p4.desc":"Installation vor Ort, Inbetriebnahme und Schulung der Bediener.",
+    "showcase.badge":"AUFNAHMEN VOR ORT",
+    "showcase.tag":"In Aktion",
+    "showcase.title":"Eine rotierende Abfüll- und Verschließlinie im Hochgeschwindigkeitsbetrieb",
+    "showcase.lead":"Dies ist eines der automatisierten Systeme, die SAETECH beschafft, installiert und betreut – direkt in der Fabrikhalle aufgenommen, nicht im Studio.",
+    "showcase.l1.b":"Rotierende Taktung",
+    "showcase.l1.d":"Flaschen werden kontinuierlich getaktet und abgefüllt, mit minimalen Stillstandszeiten zwischen den Chargen.",
+    "showcase.l2.b":"Servo-gesteuertes Verschließen",
+    "showcase.l2.d":"Eine präzise Drehmomentregelung sorgt für gleichbleibende Dichtungsqualität bei jeder Einheit.",
+    "showcase.l3.b":"Linienintegration",
+    "showcase.l3.d":"Die Linie ist für die direkte Anbindung an vor- und nachgelagerte Verpackungsstationen ausgelegt.",
+    "why.tag":"Warum SAETECH",
+    "why.title":"Ein zentraler Ansprechpartner für zwei Industriemärkte",
+    "why.lead":"Die meisten Vermittler enden bei der Rechnung. SAETECH bleibt bei Installation, Inbetriebnahme und während der jahrelangen Nutzung der Linie an Ihrer Seite.",
+    "why.c1":"Gelieferte Linien",
+    "why.c2":"Jahre Industrieautomatisierung",
+    "why.c3":"% durchschnittliche Linienverfügbarkeit",
+    "why.c4":"Partnerfabriken in China",
+    "why.i1.b":"Direkte Beschaffung beim Hersteller",
+    "why.i1.d":"Keine Zwischenhändlerketten – wir arbeiten direkt mit Herstellern, damit Preise und Lieferzeiten transparent bleiben.",
+    "why.i2.b":"Erfahrenes Engineering-Team",
+    "why.i2.d":"Unser Team verfügt über jahrelange Erfahrung bei führenden Unternehmen für automatisierte Maschinen und kann nahezu jeden Maschinentyp betreuen.",
+    "why.i3.b":"Inbetriebnahme vor Ort",
+    "why.i3.d":"Wir installieren und optimieren jede Linie selbst, bevor wir sie an Ihre Bediener übergeben.",
+    "why.i4.b":"Laufender Support",
+    "why.i4.d":"Ersatzteile, Ferndiagnose und Wartungseinsätze halten Ihre Linie auch lange nach der Übergabe zuverlässig in Betrieb.",
+    "team.tag":"Menschen & Partnerschaften",
+    "team.title":"Gründer & Strategische Partner",
+    "team.lead":"Die Stärke von SAETECH beruht auf der Führung unseres Gründers und strategischen Partnerschaften mit bedeutenden Unternehmen der Branche.",
+    "team.founder.name":"Gründer",
+    "team.founder.desc":"Herr Pham Thanh Phong",
+    "team.img.propak":"SAETECH auf der Propak Asia 2026",
+    "team.img.feyvan":"Kooperationsvereinbarung mit Feyvan Packing Machinery Co., Ltd",
+    "team.img.xispek":"Kooperationsvereinbarung mit Xispek Inspection Technology Co., Ltd",
+    "contact.tag":"Kontakt aufnehmen",
+    "contact.title":"Sagen Sie uns, was Ihre Produktionslinie leisten soll",
+    "contact.lead":"Teilen Sie uns Ihr Produkt, Ihre Zielkapazität oder eine Maschine mit, die Sie beschaffen möchten – wir melden uns mit den nächsten Schritten.",
+    "contact.phoneLabel":"Telefon / Zalo",
+    "contact.fbLabel":"Facebook",
+    "contact.baseLabel":"Standort",
+    "contact.baseValue":"Vietnam – landesweiter Fabrikservice",
+    "contact.address":"59 Ấp Chiến Lược, Bình Hưng Hòa, Ho-Chi-Minh-Stadt, Vietnam",
+    "contact.form.name":"Name",
+    "contact.form.company":"Unternehmen",
+    "contact.form.phone":"Telefon oder E-Mail",
+    "contact.form.msg":"Was möchten Sie bauen oder beschaffen?",
+    "contact.form.submit":"Nachricht senden",
+    "contact.form.sent":"Nachricht vorbereitet – verbinden Sie dieses Formular mit Ihrer E-Mail oder Ihrem CRM, um sie zu empfangen.",
+    "footer.rights":"© 2026 SAETECH. Automatisierungslösungen & Maschinenhandel China–Vietnam."
+  },
   zh: {
-    "nav.services":"服务","nav.process":"流程","nav.showcase":"实景演示","nav.why":"为何选择我们","nav.contact":"联系我们",
+    "nav.services":"服务","nav.process":"流程","nav.showcase":"实景演示","nav.why":"为何选择我们","nav.team":"团队","nav.contact":"联系我们",
     "hero.eyebrow":"自动化 · 安装调试 · 中越机械贸易",
     "hero.title":"连接越南与中国的<em>自动化生产线</em>，从建设到运行",
     "hero.lead":"SAETECH 设计自动化解决方案，安装并调试生产线，并直接从值得信赖的中国制造商为越南工厂采购工业机械设备。",
@@ -1014,9 +1150,19 @@ const translations = {
     "why.lead":"多数中间商在开票后就结束服务，而 SAETECH 会陪伴您完成安装、调试，以及此后多年的产线运行。",
     "why.c1":"已交付产线","why.c2":"工业自动化从业年限","why.c3":"% 平均产线运行率","why.c4":"中国合作工厂",
     "why.i1.b":"工厂直接采购","why.i1.d":"没有层层中间商——我们直接与制造商合作，确保价格与交期透明可靠。",
-    "why.i2.b":"双语工程团队","why.i2.d":"我们的团队精通越南语与中文，确保技术规格沟通准确无误。",
+    "why.i2.b":"经验丰富的工程团队","why.i2.d":"我们的员工在大型自动化机械企业拥有多年工作经验，能够处理几乎所有类型的机器。",
     "why.i3.b":"现场调试","why.i3.d":"我们亲自完成每条产线的安装与调校，再交付给您的操作人员。",
     "why.i4.b":"持续支持","why.i4.d":"备件供应、远程诊断与维护服务，让产线在交付后长期稳定运行。",
+
+    "team.tag":"人物与合作",
+    "team.title":"创始人与战略合作伙伴",
+    "team.lead":"SAETECH 的实力源自创始人的领导力，以及与行业重要企业建立的战略合作关系。",
+    "team.founder.name":"创始人",
+    "team.founder.desc":"Phạm Thanh Phong 先生",
+    "team.img.propak":"SAETECH 出席 2026 年 Propak Asia 展会",
+    "team.img.feyvan":"与 Feyvan Packing Machinery Co., Ltd 签署合作协议",
+    "team.img.xispek":"与 Xispek Inspection Technology Co., Ltd 签署合作协议",
+
     "contact.tag":"联系我们","contact.title":"告诉我们您的产线需要实现什么",
     "contact.lead":"分享您的产品、目标产能，或您正在寻找的设备——我们会尽快回复下一步安排。",
     "contact.phoneLabel":"电话 / Zalo","contact.fbLabel":"Facebook","contact.baseLabel":"总部","contact.baseValue":"越南 — 服务全国工厂","contact.address":"59 Ấp Chiến Lược, Bình Hưng Hòa, 胡志明市，越南",
@@ -1133,7 +1279,6 @@ document.querySelectorAll('video').forEach(video => {
     video.removeAttribute('autoplay');
   });
 });
-
 </script>
 </body>
 </html>
